@@ -31,6 +31,7 @@ nav {
 }
 .hero h1 {
     margin: 0;
+    font-size: 5vw;
 }
 .hero nav {
     display:flex;
@@ -87,5 +88,47 @@ footer {
         width: 90%;
         max-width: 400px;  
     }
+    .hero {
+        background-image: url("hero_1-768w.jpg");
+    }
 }
-
+@media (max-width: 1200px) {
+    .hero {
+        background-image: url("hero_1-1280w.jpg");
+            }
+        }
+@media (max-width: 992px) {
+    .hero {
+        background-image: url("hero_1-1024w.jpg");
+        }
+    }
+@media (max-width: 480px) {
+    .hero {
+        background-image: url("hero_1-480w.jpg");
+        }
+    }
+@supports (background-image: url("hero_1-1920w.webp")) {
+    .hero {
+        background-image: url("hero_1-1920w.webp");
+    }
+@media (max-width: 1200px) {
+    .hero {
+        background-image: url("hero_1-1280w.webp");
+        }
+    }
+@media (max-width: 992px) {
+    .hero {
+        background-image: url("hero_1-1024w.webp");
+        }
+    }
+@media (max-width: 768px) {
+    .hero {
+        background-image: url("hero_1-768w.webp");
+        }
+    }
+@media (max-width: 480px) {
+    .hero {
+        background-image: url("hero_1-480w.webp");
+        }
+    }
+}
