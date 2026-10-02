@@ -2,15 +2,29 @@
     <meta name="description" content="Nicole's Car Rentals Testimonials">
     <title>Nicole's Car Rentals Testimonials</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <h1><a href="index.html">Nicole's Car Rentals</a></h1>
-    </header>
-    <nav>
-        <a href="cars.html">Available Cars</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="about.html">About Me</a>
-        <a href="contact.html">Contact The Owner</a>
+    <nav class="topnav" id="myTopnav">
+        <a href="cars.html"><i class="fa fa-car"></i> Available Cars</a>
+        <a href="testimonials.html"><i class="fa fa-comments"></i> Testimonials</a>
+        <a href="about.html"><i class="fa fa-user"></i> About Me</a>
+        <a href="contact.html"><i class="fa fa-envelope"></i> Contact The Owner</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </nav>
+    </header>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </body>

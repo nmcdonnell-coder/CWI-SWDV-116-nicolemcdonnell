@@ -8,17 +8,21 @@
    <title>Nicole's Car Rentals</title>
    <link rel="icon" type="image/x-icon" href="https://zany.sh/favicon.svg?text=NM">
    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <section class="hero">
    <header>
       <h1>Nicole's Car Rentals</h1>
-      <nav>
-         <a href="cars.html">Available Cars</a>
-         <a href="testimonials.html">Testimonials</a>
-         <a href="about.html">About Me</a>
-         <a href="contact.html">Contact The Owner</a>
-      </nav>
+   <nav class="topnav" id="myTopnav">
+      <a href="cars.html"><i class="fa fa-car"></i> Available Cars</a>
+      <a href="testimonials.html"><i class="fa fa-comments"></i> Testimonials</a>
+      <a href="about.html"><i class="fa fa-user"></i> About Me</a>
+      <a href="contact.html"><i class="fa fa-envelope"></i> Contact The Owner</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+         <i class="fa fa-bars"></i>
+      </a>
+   </nav>
    </header>
 </section>
    <main>
@@ -94,5 +98,15 @@
    <footer>
       <p>&copy; 2026</p>
    </footer>
+   <script>
+      function myFunction() {
+         var x = document.getElementById("myTopnav");
+         if (x.className === "topnav") {
+            x.className += " responsive";
+         } else {
+            x.className = "topnav";
+         }
+      }
+   </script>
 </body>
 </html>
