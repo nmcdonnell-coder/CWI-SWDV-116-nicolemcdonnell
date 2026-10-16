@@ -42,6 +42,16 @@ nav {
 .featured-cars {
     padding: 40px 20px;
 }
+.featured-cars {
+    padding: 40px 20px;
+}
+.featured-cars video {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto 20px;
+}
 .featured-cars h2 {
     text-align: center;
 }
