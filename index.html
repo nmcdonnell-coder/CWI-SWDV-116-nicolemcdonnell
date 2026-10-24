@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="SWDV-116 Lab 9">
+   <meta name="description" content="SWDV-116 Lab 10">
    <meta name="author" content="Nicole McDonnell">
    <title>Nicole's Car Rentals</title>
    <link rel="icon" type="image/x-icon" href="https://zany.sh/favicon.svg?text=NM">
@@ -24,6 +24,24 @@
       </a>
    </nav>
    </header>
+   <div class="hero-form">
+      <h2>Rent A Car Today</h2>
+      <form action="cars.html" method="GET">
+         <label for="type">Car Type</label>
+         <select name="type" id="type">
+            <option value="sedan">Sedan</option>
+            <option value="SUV">SUV</option>
+            <option value="truck">Truck</option>
+            <option value="convertible">Convertible</option>
+            <option value="van">Van</option>
+         </select>
+         <label for="pickup">Pickup Date</label>
+         <input type="date" name="pickup" id="pickup">
+         <label for="return">Return Date</label>
+         <input type="date" name="return" id="return">
+         <button type="submit">Search</button>
+      </form>
+   </div>
 </section>
    <main>
       <section class="featured-cars">
@@ -121,6 +139,21 @@
             x.className = "topnav";
          }
       }
+      const pickupDate = document.getElementById("pickup");
+      const returnDate = document.getElementById("return");
+      pickupDate.addEventListener("change", function () {
+         returnDate.min = pickupDate.value;
+         if (returnDate.value && returnDate.value < pickupDate.value) {
+            returnDate.value = pickupDate.value;
+         }
+      });
+      returnDate.addEventListener("change", function () {
+         pickupDate.max = returnDate.value;
+
+         if (pickupDate.value && pickupDate.value > returnDate.value) {
+            pickupDate.value = returnDate.value;
+         }
+      });      
    </script>
 </body>
 </html>
