@@ -26,7 +26,7 @@
    </header>
    <div class="hero-form">
       <h2>Rent A Car Today</h2>
-      <form action="cars.html" method="GET">
+      <form id="searchForm" action="cars.html" method="GET">
          <label for="type">Car Type</label>
          <select name="type" id="type">
             <option value="sedan">Sedan</option>
@@ -130,31 +130,7 @@
    <footer>
       <p>&copy; 2026</p>
    </footer>
-   <script>
-      function myFunction() {
-         var x = document.getElementById("myTopnav");
-         if (x.className === "topnav") {
-            x.className += " responsive";
-         } else {
-            x.className = "topnav";
-         }
-      }
-      const pickupDate = document.getElementById("pickup");
-      const returnDate = document.getElementById("return");
-      pickupDate.addEventListener("change", function () {
-         returnDate.min = pickupDate.value;
-         if (returnDate.value && returnDate.value < pickupDate.value) {
-            returnDate.value = pickupDate.value;
-         }
-      });
-      returnDate.addEventListener("change", function () {
-         pickupDate.max = returnDate.value;
-
-         if (pickupDate.value && pickupDate.value > returnDate.value) {
-            pickupDate.value = returnDate.value;
-         }
-      });      
-   </script>
+   <script src="main.js"></script>
    <script src="password.js"></script>
 </body>
 </html>
