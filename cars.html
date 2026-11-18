@@ -26,6 +26,12 @@
         <section class="featured-cars">
             <h2>Available Cars</h2>
             <div class="car-container"></div>
+            <dialog id="rentalDialog">
+                <h2>Confirm Your Rental</h2>
+                <p id="rentalDetails"></p>
+                <button id="confirmButton">Confirm</button>
+                <button id="cancelButton">Cancel</button>
+            </dialog>
         </section>
     </main>
     <footer>
@@ -33,6 +39,26 @@
     </footer>
     <script src="main.js"></script>
     <script>
+        let rentalInfo;
+        const rentalDialog = document.getElementById("rentalDialog");
+        const rentalDetails = document.getElementById("rentalDetails");
+        const confirmButton = document.getElementById("confirmButton");
+        const cancelButton = document.getElementById("cancelButton");
+        document.addEventListener("confirm-rental", function(event) {
+            rentalInfo = event.detail;
+            rentalDetails.textContent =
+                "Car Type: " + rentalInfo.carType +
+                " | Start Date: " + rentalInfo.startDate +
+                " | Return Date: " + rentalInfo.returnDate;
+            rentalDialog.showModal();
+        });
+        confirmButton.addEventListener("click", function() {
+            rentalDialog.close();
+            console.log("Rental confirmed:", rentalInfo);
+        });
+        cancelButton.addEventListener("click", function() {
+            rentalDialog.close();
+        });
         document.addEventListener("DOMContentLoaded", function() {
             listCars();
         });
